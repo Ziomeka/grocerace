@@ -4,6 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxt/eslint',
-    '@unocss/nuxt',
+    ['@unocss/nuxt',{
+      inspector: true,
+    }],
   ]
 })

@@ -18,8 +18,11 @@
   },
   "devDependencies": {
     "@iconify-json/material-symbols": "^1.2.21",
+    "@unocss/inspector": "^66.1.2",
     "@unocss/nuxt": "^66.1.2",
     "@unocss/preset-icons": "^66.1.2",
+    "@unocss/preset-mini": "^66.1.2",
+    "@unocss/preset-web-fonts": "^66.1.2",
     "unocss": "^66.1.2"
   }
 }

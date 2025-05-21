@@ -1,6 +1,6 @@
 <template>
-  <div>
+  <div class="font-sans bg-vanilla min-h-vh p-4 md:p-6 flex flex-col">
     <NuxtRouteAnnouncer />
-    <h1 class="m-1">Title <span class="i-material-symbols-add" /></h1>
+    <NuxtLayout />
   </div>
 </template>

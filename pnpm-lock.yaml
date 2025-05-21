@@ -29,10 +29,19 @@ importers:
       '@iconify-json/material-symbols':
         specifier: ^1.2.21
         version: 1.2.21
+      '@unocss/inspector':
+        specifier: ^66.1.2
+        version: 66.1.2(vue@3.5.14(typescript@5.8.3))
       '@unocss/nuxt':
         specifier: ^66.1.2
         version: 66.1.2(magicast@0.3.5)(postcss@8.5.3)(vite@6.3.5(@types/node@22.15.21)(jiti@2.4.2)(terser@5.39.2)(yaml@2.8.0))(vue@3.5.14(typescript@5.8.3))(webpack@5.99.9(esbuild@0.25.4))
       '@unocss/preset-icons':
+        specifier: ^66.1.2
+        version: 66.1.2
+      '@unocss/preset-mini':
+        specifier: ^66.1.2
+        version: 66.1.2
+      '@unocss/preset-web-fonts':
         specifier: ^66.1.2
         version: 66.1.2
       unocss:
