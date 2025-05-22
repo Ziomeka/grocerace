@@ -1,5 +1,5 @@
 export const preflights = [
-    {
+  {
     getCSS: () => `
       *, *::before, *::after {
         box-sizing: border-box;

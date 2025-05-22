@@ -1,10 +1,10 @@
-import { defineConfig, presetIcons } from 'unocss'
 import presetMini from '@unocss/preset-mini'
 import presetWebFonts from '@unocss/preset-web-fonts'
+import { defineConfig, presetIcons } from 'unocss'
 
-import { theme } from './design/theme'
 import { fonts } from './design/fonts'
 import { preflights } from './design/preflights'
+import { theme } from './design/theme'
 
 export default defineConfig({
   preflights,
@@ -13,11 +13,11 @@ export default defineConfig({
     presetMini(),
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
+        'display': 'inline-block',
         'vertical-align': 'middle',
       },
     }),
-    presetWebFonts(fonts)
+    presetWebFonts(fonts),
   ],
   content: {
     pipeline: {
