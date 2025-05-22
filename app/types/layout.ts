@@ -1,5 +1,5 @@
 export interface LayoutHeader {
-  title?: string
+  title: string
   back?: boolean
   backTo?: string
 }
