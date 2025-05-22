@@ -8,4 +8,9 @@ export default defineNuxtConfig({
       inspector: true,
     }],
   ],
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
 })
