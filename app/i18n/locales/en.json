@@ -1,4 +1,8 @@
 {
   "brand": "Grocerace",
-  "lists": "Shopping list"
+  "lists-title": "Shopping list",
+  "lists": "Lists",
+  "settings": "Settings",
+  "about": "Author",
+  "back": "Back"
 }

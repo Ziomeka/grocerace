@@ -18,7 +18,7 @@
 definePageMeta({
   layout: 'default',
   header: {
-    title: 'brand',
+    titleKey: 'brand',
     back: false,
   },
 })

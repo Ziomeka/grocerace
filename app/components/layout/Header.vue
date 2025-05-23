@@ -1,12 +1,16 @@
 <template>
-  <header class="shadow-xl sticky top-0 bg-vanilla">
-    <div class="color-teal text-size-4xl md:text-size-6xl flex flex-items-center flex-justify-between max-w-lg mx-auto px-4 py-2">
-      <nuxt-link v-if="meta.back" class="text-xl" to="/">
-        ←
+  <header class="shadow-bottom sticky top-0 bg-vanilla">
+    <div class="flex flex-items-center flex-justify-between max-w-4xl mx-auto px-4 py-2">
+      <nuxt-link v-if="meta.back" class="text-xl" :to="meta.backTo" :aria-label="$t(meta.backToLabelKey || 'back')">
+        <span class="i-material-symbols-arrow-back text-3xl color-teal" />
       </nuxt-link>
-      <h1 class="font-heading fw-bold truncate">
-        {{ $t(meta.title) }}
+      <span v-else>
+        <span class="i-material-symbols-arrow-back text-3xl invisible" />
+      </span>
+      <h1 class="font-heading fw-bold text-size-2xl truncate color-teal">
+        {{ $t(meta.titleKey) }}
       </h1>
+      <layout-navigation class="<md:hidden" />
     </div>
   </header>
 </template>

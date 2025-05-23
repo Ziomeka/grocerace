@@ -4,11 +4,13 @@ import { defineConfig, presetIcons } from 'unocss'
 
 import { fonts } from './design/fonts'
 import { preflights } from './design/preflights'
+import { shortcuts } from './design/shortcuts'
 import { theme } from './design/theme'
 
 export default defineConfig({
   preflights,
   theme,
+  shortcuts,
   presets: [
     presetMini(),
     presetIcons({

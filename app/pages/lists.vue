@@ -6,7 +6,7 @@
 definePageMeta({
   layout: 'default',
   header: {
-    title: 'lists',
+    titleKey: 'lists-title',
     back: true,
     backTo: '/',
   },
