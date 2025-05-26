@@ -12,6 +12,7 @@ export default withNuxt(
       'vue/block-order': ['error', {
         order: [['template', 'script'], 'style'],
       }],
+      'antfu/top-level-function': 'off',
     },
   }),
 )
