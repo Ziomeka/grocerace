@@ -5,16 +5,13 @@
     <button :disabled="!inputValue" class="btn-teal" @click="addItem">
       Add
     </button>
-    <p
-      v-for="(list, index) in lists"
-      :key="index"
-    >
-      {{ list }}
-    </p>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+import uid from '~/utils/uid'
+
 definePageMeta({
   layout: 'default',
   header: {
@@ -24,13 +21,16 @@ definePageMeta({
   },
 })
 
+const router = useRouter()
+
 const inputValue = ref('')
 
-// dummy list array
-const lists = ref<string[]>([])
+// // dummy list array
+// const lists = ref<string[]>([])
 
 const addItem = () => {
-  lists.value.push(inputValue.value)
-  inputValue.value = ''
+  const id = uid()
+  console.log(id, 'bla')
+  router.push(`/list/${id}`)
 }
 </script>
