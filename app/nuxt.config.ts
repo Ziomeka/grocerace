@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     ['@unocss/nuxt', { inspector: true }],
     '@nuxtjs/i18n',
+    '@nuxtjs/storybook',
   ],
   i18n: {
     locales: [
