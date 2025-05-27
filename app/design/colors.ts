@@ -6,3 +6,23 @@ export const colors = {
   red: '#ef4444',
   blue: '#0768DF',
 }
+
+const steps = [10, 30, 50, 70]
+
+function generateColorMixVariants(colors: Record<string, string>, steps: number[]) {
+  const result = { ...colors }
+
+  for (const [name, color] of Object.entries(colors)) {
+    for (const step of steps) {
+      // Lighten toward white
+      result[`${name}-lighten-${step}`] = `color-mix(in srgb, ${color} ${100 - step}%, white ${step}%)`
+
+      // Darken toward black
+      result[`${name}-darken-${step}`] = `color-mix(in srgb, ${color} ${100 - step}%, black ${step}%)`
+    }
+  }
+
+  return result
+}
+
+export const extendedColors = generateColorMixVariants(colors, steps)

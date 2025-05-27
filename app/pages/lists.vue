@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="container">
     <p> Lists </p>
     <UiTextInput v-model="inputValue" label="Add list" error="Some error" placeholder="Something" class="p-2 max-w-xs" />
-    <button :disabled="!inputValue" @click="addItem" > Add </button>
+    <button :disabled="!inputValue" class="btn-teal" @click="addItem">
+      Add
+    </button>
     <p
       v-for="(list, index) in lists"
       :key="index"

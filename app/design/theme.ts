@@ -1,8 +1,8 @@
 import type { Theme } from 'unocss/preset-mini'
-import { colors } from './colors'
+import { extendedColors } from './colors'
 import { fontFamily } from './fonts'
 
 export const theme: Partial<Theme> = {
-  colors,
+  colors: extendedColors,
   fontFamily,
 }
