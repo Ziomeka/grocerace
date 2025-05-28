@@ -2,7 +2,7 @@ import { io } from 'socket.io-client'
 
 const socket = io('http://localhost:3001') // temp
 
-export function useListSocket(listId: string) {
+export const useListSocket = (listId: string) => {
   const list = ref<string[]>([])
 
   socket.emit('join-list', listId)

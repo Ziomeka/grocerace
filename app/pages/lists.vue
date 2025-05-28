@@ -25,12 +25,8 @@ const router = useRouter()
 
 const inputValue = ref('')
 
-// // dummy list array
-// const lists = ref<string[]>([])
-
 const addItem = () => {
   const id = uid()
-  console.log(id, 'bla')
   router.push(`/list/${id}`)
 }
 </script>

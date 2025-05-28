@@ -9,7 +9,7 @@ export const colors = {
 
 const steps = [10, 30, 50, 70]
 
-function generateColorMixVariants(colors: Record<string, string>, steps: number[]) {
+const generateColorMixVariants = (colors: Record<string, string>, steps: number[]) => {
   const result = { ...colors }
 
   for (const [name, color] of Object.entries(colors)) {

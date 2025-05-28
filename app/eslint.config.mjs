@@ -13,6 +13,7 @@ export default withNuxt(
         order: [['template', 'script'], 'style'],
       }],
       'antfu/top-level-function': 'off',
+      'perfectionist/sort-imports': ['off'], // todo create some sane rules, and make sure it works also for inside setup
     },
   }),
 )
