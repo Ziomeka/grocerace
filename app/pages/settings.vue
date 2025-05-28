@@ -6,25 +6,23 @@
     <p>
       This is you settings panel where you can change your preferences
     </p>
-    <form aria-labelledby="title" class="py-4">
-      <p id="title" class="font-heading fw-bold text-size-xl color-teal">
+    <form aria-labelledby="name-title" class="py-4">
+      <p id="name-title" class="font-heading fw-bold text-size-xl color-teal">
         {{ displayName ? 'You can change your display name' : 'To use the app you need to set your display name' }}
       </p>
       <div class="flex gap-2 items-end p-4">
-        <UiTextInput v-model="inputValue" label="Name" class="max-w-xs" />
-        <button :disabled="!inputValue" class="btn-teal" @click.prevent="setName">
+        <UiTextInput v-model="nameInputValue" label="Name" class="max-w-xs" />
+        <button :disabled="!nameInputValue" class="btn-teal" @click.prevent="setName">
           {{ displayName ? 'Change' : 'Save' }}
         </button>
       </div>
     </form>
-    <div class="py-4">
-      <p class="font-heading fw-bold text-size-xl color-teal">
+    <form aria-labelledby="language-title" class="py-4">
+      <p id="language-title" class="font-heading fw-bold text-size-xl color-teal">
         Change language
       </p>
-      <p class="p-4">
-        TBD
-      </p>
-    </div>
+      <UiBaseSelect v-model="languageInputValue" :options="languageOptions" label="Language" @update:model-value="setLocale($event)" />
+    </form>
     <div class="py-4 flex content-end w-full">
       <nuxt-link to="/lists" class="btn-pink ml-auto">
         Go to shopping lists
@@ -34,6 +32,9 @@
 </template>
 
 <script setup lang="ts">
+import type { Option } from '~/components/ui/BaseSelect.vue'
+import type { AvailableLocales } from '~/types/global'
+
 definePageMeta({
   layout: 'default',
   header: {
@@ -41,12 +42,14 @@ definePageMeta({
   },
 })
 
-const { setDisplayName, displayName } = useUserSettings()
+const { setDisplayName, displayName, locale, setLocale } = useUserSettings()
 
-const inputValue = ref(displayName.value || '')
+const nameInputValue = ref(displayName.value || '')
+const languageOptions: Option<AvailableLocales>[] = [{ label: 'Polish', value: 'pl' }, { label: 'English', value: 'en' }]
+const languageInputValue = ref(locale.value)
 
 const setName = () => {
-  setDisplayName(inputValue.value)
-  inputValue.value = ''
+  setDisplayName(nameInputValue.value)
+  nameInputValue.value = ''
 }
 </script>

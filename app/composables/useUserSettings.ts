@@ -1,34 +1,23 @@
 import { useStorage } from '@vueuse/core'
-import { useI18n } from 'vue-i18n'
-
 import type { AvailableLocales } from '~/types/global'
-
-export interface UserSettings {
-  displayName: string | undefined
-  locale: AvailableLocales
-}
 
 export const useUserSettings = () => {
   const { $i18n } = useNuxtApp()
-  const DEFAULT_SETTINGS: UserSettings = {
-    displayName: undefined,
-    locale: $i18n.locale.value,
-  }
-
-  const settings = useStorage<UserSettings>('user-settings', DEFAULT_SETTINGS)
+  const displayName = useStorage<string | undefined>('user-display-name', undefined)
+  const locale = useStorage<AvailableLocales>('user-locale', $i18n.locale.value)
 
   const setDisplayName = (name: string) => {
-    settings.value.displayName = name.trim()
+    displayName.value = name.trim()
   }
 
-  const setLocale = (locale: AvailableLocales) => {
-    settings.value.locale = locale
-    $i18n.locale.value = locale
+  const setLocale = (value: AvailableLocales) => {
+    locale.value = value
+    $i18n.setLocale(value)
   }
 
   return {
-    displayName: computed(() => settings.value.displayName),
-    locale: computed(() => settings.value.locale),
+    displayName: computed(() => displayName.value),
+    locale: computed(() => locale.value),
     setDisplayName,
     setLocale,
   }
