@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@grocerace/app",
   "type": "module",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@grocerace/shared": "workspace:*",
     "@nuxt/eslint": "1.4.1",
     "@nuxtjs/i18n": "9.5.4",
     "eslint": "^9.27.0",
