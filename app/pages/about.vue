@@ -19,8 +19,9 @@ definePageMeta({
   layout: 'default',
   ssr: true,
   header: {
-    titleKey: 'brand',
-    back: false,
+    titleKey: 'about-title',
+    back: true,
+    backTo: '/',
   },
 })
 </script>

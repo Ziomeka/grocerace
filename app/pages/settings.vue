@@ -34,8 +34,6 @@
 </template>
 
 <script setup lang="ts">
-import { useUserSettings } from '~/composables/useSettings'
-
 definePageMeta({
   layout: 'default',
   header: {
