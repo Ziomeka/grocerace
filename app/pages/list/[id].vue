@@ -21,6 +21,7 @@ definePageMeta({
     titleKey: 'lists-title',
     back: true,
     backTo: '/lists',
+    backToLabelKey: 'back-to-lists',
   },
 })
 
