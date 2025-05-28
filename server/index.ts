@@ -1,7 +1,7 @@
 import express from 'express'
 import { createServer } from 'http'
 import { Server } from 'socket.io'
-import cors from 'cors'
+import type { ListItem } from '@grocerace/shared'
 
 const app = express()
 const httpServer = createServer(app)
@@ -11,7 +11,7 @@ const io = new Server(httpServer, {
   },
 })
 
-const lists: Record<string, string[]> = {}
+const lists: Record<string, ListItem[]> = {}
 
 io.on('connection', (socket) => {
   console.log('Connected:', socket.id)
@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
     socket.emit('list-init', lists[listId] || [])
   })
 
-  socket.on('add-item', ({ listId, item }) => {
+  socket.on('add-item', ({ listId, item }: { listId: string; item: ListItem }) => {
     if (!lists[listId]) lists[listId] = []
     lists[listId].push(item)
     io.to(listId).emit('item-added', item)

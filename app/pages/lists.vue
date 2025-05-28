@@ -1,9 +1,7 @@
 <template>
   <div class="container">
-    <p> Lists </p>
-    <UiTextInput v-model="inputValue" label="Add list" error="Some error" placeholder="Something" class="p-2 max-w-xs" />
-    <button :disabled="!inputValue" class="btn-teal" @click="addItem">
-      Add
+    <button class="btn-pink" @click="createList">
+      Create shopping list
     </button>
   </div>
 </template>
@@ -23,9 +21,7 @@ definePageMeta({
 
 const router = useRouter()
 
-const inputValue = ref('')
-
-const addItem = () => {
+const createList = () => {
   const id = uid()
   router.push(`/list/${id}`)
 }
