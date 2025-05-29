@@ -11,7 +11,7 @@
         {{ displayName ? 'You can change your display name' : 'To use the app you need to set your display name' }}
       </p>
       <div class="flex gap-2 items-end p-4">
-        <UiTextInput v-model="nameInputValue" label="Name" class="max-w-xs" />
+        <UiTextInput v-model="nameInputValue" label="Name" class="w-xs" />
         <button :disabled="!nameInputValue" class="btn-teal" @click.prevent="setName">
           {{ displayName ? 'Change' : 'Save' }}
         </button>
@@ -21,9 +21,14 @@
       <p id="language-title" class="font-heading fw-bold text-size-xl color-teal">
         Change language
       </p>
-      <UiBaseSelect v-model="languageInputValue" :options="languageOptions" label="Language" @update:model-value="setLocale($event)" />
+      <UiBaseSelect
+        v-model="languageInputValue"
+        :options="languageOptions"
+        label="Language"
+        class="m-4 w-xs"
+        @update:model-value="setLocale($event)" />
     </form>
-    <div class="py-4 flex content-end w-full">
+    <div v-if="displayName" class="py-4 flex content-end w-full">
       <nuxt-link to="/lists" class="btn-pink ml-auto">
         Go to shopping lists
       </nuxt-link>

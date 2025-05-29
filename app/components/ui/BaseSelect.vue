@@ -1,6 +1,8 @@
 <template>
-  <label :for="id" class="flex flex-col font-heading fw-bold text-size-md color-teal pl-2">
-    {{ label }}
+  <div class="flex flex-col">
+    <label :for="id" class="font-heading fw-bold text-size-md color-teal pl-2">
+      {{ label }}
+    </label>
     <select
       :id="id"
       :value="modelValue"
@@ -11,7 +13,7 @@
         {{ option.label }}
       </option>
     </select>
-  </label>
+  </div>
 </template>
 
 <script setup lang="ts" generic="T extends string">

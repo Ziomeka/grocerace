@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <p> Your list id is: {{ route.params.id }} </p>
-    <form aria-labelledby="add-title" class="mb-4 p-2 max-w-xs">
+    <p class="my-4">
+      Your list id is: <span class="font-heading fw-bold text-size-xl color-teal">{{ route.params.id }}</span>
+    </p>
+    <form aria-labelledby="add-title" class="mb-4 max-w-xs">
       <p id="add-title" class="font-heading fw-bold text-size-xl color-teal">
         Add item to shopping list
       </p>

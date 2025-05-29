@@ -1,8 +1,24 @@
 <template>
   <div class="container">
-    <button class="btn-pink" @click="createList">
-      Create shopping list
-    </button>
+    <div>
+      <p class="font-heading fw-bold text-size-xl color-teal">
+        Create new list
+      </p>
+      <button class="btn-pink m-4" @click="createList">
+        Create
+      </button>
+    </div>
+    <form aria-labelledby="name-title" class="py-4">
+      <p id="name-title" class="font-heading fw-bold text-size-xl color-teal">
+        Join existing list by its id
+      </p>
+      <div class="flex gap-2 items-end p-4">
+        <UiTextInput v-model="listIdValue" label="List id" class="w-xs" />
+        <button :disabled="!listIdValue" class="btn-teal" @click.prevent="goToList">
+          Join
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -21,8 +37,15 @@ definePageMeta({
 
 const router = useRouter()
 
+const listIdValue = ref('')
+
 const createList = () => {
   const id = uid()
   router.push(`/list/${id}`)
+}
+
+const goToList = () => {
+  console.log(listIdValue.value)
+  router.push(`/list/${listIdValue.value}`)
 }
 </script>
