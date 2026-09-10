@@ -1,45 +1,50 @@
 <template>
   <div class="flex flex-col">
-    <label :for="id" class="pl-2 font-heading fw-bold text-size-md color-teal">{{ label }}</label>
-    <input
-      :id="id"
-      type="text"
-      :value="modelValue"
-      :placeholder="placeholder"
-      :aria-invalid="error ? 'true' : 'false'"
-      :aria-describedby="error ? `${id}-error` : undefined"
-      class="p-1 text-size-xl b-teal b-solid b-rd-xl"
-      @input="onInput"
+    <EditableRoot
+      v-slot="{ isEditing }"
+      :default-value="fieldValue"
+      :placeholder="fieldValue"
+      activation-mode="none"
+      submit-mode="enter"
+      class="flex"
+      @submit="value => fieldValue = value ?? ''"
     >
-    <p v-if="error" :id="`${id}-error`" role="alert" class="pl-2 text-size-md color-red">
-      {{ error }}
-    </p>
+      <EditableArea>
+        <EditablePreview />
+        <EditableInput :aria-label="label" />
+      </EditableArea>
+      <EditableEditTrigger v-if="!isEditing" as-child>
+        <button type="button" aria-label="Edit">
+          ✏️
+        </button>
+      </EditableEditTrigger>
+      <div
+        v-else
+        class="flex gap-2"
+      >
+        <EditableSubmitTrigger as-child>
+          <button type="button" aria-label="Save">
+            ✔️
+          </button>
+        </EditableSubmitTrigger>
+        <EditableCancelTrigger as-child>
+          <button type="button" aria-label="Cancel">
+            ✖️
+          </button>
+        </EditableCancelTrigger>
+      </div>
+    </EditableRoot>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useDebounceFn } from '@vueuse/core'
-import { BASE_TIMEOUT } from '~/types/constants'
-import uid from '~/utils/uid'
+import { EditableArea, EditableCancelTrigger, EditableEditTrigger, EditableInput, EditablePreview, EditableRoot, EditableSubmitTrigger } from 'reka-ui'
 
 interface Props {
-  modelValue: string
   label: string
-  placeholder?: string
-  error?: string
-  disabled?: boolean
 }
 
 defineProps<Props>()
 
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: string): void
-}>()
-
-const id = `text-input-${uid()}`
-
-const onInput = useDebounceFn((event: Event) => {
-  const target = event.target as HTMLInputElement
-  emit('update:modelValue', target.value)
-}, BASE_TIMEOUT)
+const fieldValue = defineModel<string>({ required: true })
 </script>

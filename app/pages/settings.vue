@@ -11,10 +11,7 @@
         {{ displayName ? 'You can change your display name' : 'To use the app you need to set your display name' }}
       </p>
       <div class="flex gap-2 items-end p-4">
-        <UiTextInput v-model="nameInputValue" label="Name" class="w-xs" />
-        <button :disabled="!nameInputValue" class="btn-teal" @click.prevent="setName">
-          {{ displayName ? 'Change' : 'Save' }}
-        </button>
+        <UiTextInput v-model="nameInputValue" label="Name" class="w-xs" @update:model-value="setName" />
       </div>
     </form>
     <form aria-labelledby="language-title" class="py-4">
@@ -26,7 +23,8 @@
         :options="languageOptions"
         label="Language"
         class="m-4 w-xs"
-        @update:model-value="setLocale($event)" />
+        @update:model-value="setLocale($event)"
+      />
     </form>
     <div v-if="displayName" class="py-4 flex content-end w-full">
       <nuxt-link to="/lists" class="btn-pink ml-auto">

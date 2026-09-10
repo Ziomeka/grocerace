@@ -23,6 +23,13 @@ export const usePersonalLists = () => {
     personalLists.value.splice(index, 1)
   }
 
+  const editListName = (id: string, name: string) => {
+    const list = getList(id)
+    if (list) {
+      list.name = name
+    }
+  }
+
   const addItem = (listId: string, item: string) => {
     getList(listId)!.items.push(item)
   }
@@ -40,6 +47,7 @@ export const usePersonalLists = () => {
     createList,
     getList,
     deleteList,
+    editListName,
     addItem,
     removeItem,
     updateItem,
