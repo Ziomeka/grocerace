@@ -29,7 +29,7 @@
     "@unocss/preset-mini": "^66.10.1",
     "@unocss/preset-web-fonts": "^66.10.1",
     "@vueuse/core": "^14.4.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "unocss": "^66.10.1"
   }
 }
