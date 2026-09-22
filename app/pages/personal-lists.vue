@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <p class="font-heading fw-bold text-size-xl color-teal">
+      <p class="font-heading fw-bold text-size-xl color-primary">
         Your personal lists
       </p>
       <ul>
@@ -19,7 +19,7 @@
       </ul>
     </div>
     <form aria-labelledby="name-title" class="py-4" @submit.prevent="createList(listName)">
-      <p id="name-title" class="font-heading fw-bold text-size-xl color-teal">
+      <p id="name-title" class="font-heading fw-bold text-size-xl color-primary">
         Create new list
       </p>
       <div class="flex gap-2 items-end p-4">

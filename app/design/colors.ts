@@ -1,10 +1,16 @@
 export const colors = {
-  teal: '#306e66',
-  gray: '#4b5563',
-  pink: '#f472b6',
-  vanilla: '#fcf7ea',
-  red: '#ef4444',
-  blue: '#0768DF',
+  'surface': '#fffbf5',
+  'primary': '#28665e',
+  'secondary': '#a96573',
+
+  'on-surface': '#4b5563',
+  'on-primary': '#fffbf5',
+  'on-secondary': '#fffbf5',
+
+  'action': '#0768df',
+  'warning': '#b96f24',
+  'success': '#3f7d5a',
+  'destructive': '#ef4444',
 }
 
 const steps = [10, 30, 50, 70]

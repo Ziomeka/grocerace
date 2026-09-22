@@ -1,5 +1,5 @@
 <template>
-  <nav class="grid grid-cols-3 gap-lg color-teal ">
+  <nav class="grid grid-cols-3 gap-lg color-primary ">
     <nuxt-link to="personal-lists" class="flex flex-col flex-items-center">
       <span class="i-material-symbols-list-alt text-3xl" />{{ $t('lists') }}
     </nuxt-link>

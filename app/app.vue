@@ -1,5 +1,5 @@
 <template>
-  <div class="font-sans bg-vanilla min-h-vh">
+  <div class="font-sans bg-surface min-h-vh">
     <NuxtRouteAnnouncer />
     <NuxtLayout />
   </div>

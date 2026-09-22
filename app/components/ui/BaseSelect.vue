@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col">
-    <label :for="id" class="font-heading fw-bold text-size-md color-teal pl-2">
+    <label :for="id" class="font-heading fw-bold text-size-md color-primary pl-2">
       {{ label }}
     </label>
     <select
       :id="id"
       :value="modelValue"
-      class="p-1 text-size-xl b-2 b-teal b-solid b-rd-xl focus:b-rd-b-0"
+      class="p-1 text-size-xl b-2 b-primary b-solid b-rd-xl focus:b-rd-b-0"
       @change="onChange($event)"
     >
       <option v-for="option in options" :key="option.value" :value="option.value">

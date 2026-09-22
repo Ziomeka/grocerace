@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <p v-if="displayName" class="font-heading fw-bold text-size-4xl color-teal">
+    <p v-if="displayName" class="font-heading fw-bold text-size-4xl color-primary">
       Hi {{ displayName || 'Newcomer' }} !
     </p>
     <p>
       This is you settings panel where you can change your preferences
     </p>
     <form aria-labelledby="name-title" class="py-4">
-      <p id="name-title" class="font-heading fw-bold text-size-xl color-teal">
+      <p id="name-title" class="font-heading fw-bold text-size-xl color-primary">
         {{ displayName ? 'You can change your display name' : 'To use the app you need to set your display name' }}
       </p>
       <div class="flex gap-2 items-end p-4">
@@ -15,7 +15,7 @@
       </div>
     </form>
     <form aria-labelledby="language-title" class="py-4">
-      <p id="language-title" class="font-heading fw-bold text-size-xl color-teal">
+      <p id="language-title" class="font-heading fw-bold text-size-xl color-primary">
         Change language
       </p>
       <UiBaseSelect
@@ -27,7 +27,7 @@
       />
     </form>
     <div v-if="displayName" class="py-4 flex content-end w-full">
-      <nuxt-link to="/lists" class="btn-pink ml-auto">
+      <nuxt-link to="/lists" class="btn-secondary ml-auto">
         Go to shopping lists
       </nuxt-link>
     </div>
