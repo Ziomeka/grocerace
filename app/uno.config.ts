@@ -2,7 +2,7 @@ import presetMini from '@unocss/preset-mini'
 import presetWebFonts from '@unocss/preset-web-fonts'
 import { defineConfig, presetIcons } from 'unocss'
 
-import { fonts } from './design/fonts'
+import { fonts } from './design/tokens/fonts'
 import { preflights } from './design/preflights'
 import { shortcuts } from './design/shortcuts'
 import { theme } from './design/theme'
@@ -22,6 +22,10 @@ export default defineConfig({
     presetWebFonts(fonts),
   ],
   content: {
+    filesystem: [
+      './**/*.vue',
+      './**/*.{js,ts}',
+    ],
     pipeline: {
       include: [
         /\.(vue)($|\?)/,

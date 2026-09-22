@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   ssr: false,
+  watch: [
+    './uno.config.ts',
+    './design/**/*.ts',
+  ],
   modules: [
     '@nuxt/eslint',
     ['@unocss/nuxt', { inspector: true }],
