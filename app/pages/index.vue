@@ -6,7 +6,7 @@
     <p>
       Add, track, and complete items together with friends or family — whether you're planning a grocery run or organizing a group event. See who added what, and keep your list up to date across all devices instantly.
     </p>
-    <nuxt-link to="/lists" class="btn-secondary self-end">
+    <nuxt-link to="/lists" class="btn-secondary btn-xl self-end">
       Start
     </nuxt-link>
   </div>

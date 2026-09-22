@@ -27,7 +27,7 @@ export const buttonShortcuts: Shortcut[] = [
       p-2 text-size-xl
       bg-${c}
       border-solid border-1 border-${c}
-      color-on-${c}
+      color-surface
     `,
   ],
 

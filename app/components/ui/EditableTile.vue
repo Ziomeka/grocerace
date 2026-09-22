@@ -1,18 +1,18 @@
 <template>
-  <div class="flex items-center justify-between gap-3">
+  <div class="flex items-center gap-3 b-rd-xl m-2 p-2 border--primary focus:border-2">
     <UiTextInput
       v-model="inputValue"
       label="List name"
-      class="font-medium truncate"
       @update:model-value="$emit('edit', $event)"
     />
 
     <button
       type="button"
       aria-label="Delete"
+      class="btn-destructive btn-lg aspect-square"
       @click="$emit('delete')"
     >
-      🗑️
+      <span class="i-material-symbols-delete" />
     </button>
   </div>
 </template>
